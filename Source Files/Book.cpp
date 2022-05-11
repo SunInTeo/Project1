@@ -137,11 +137,6 @@ Book::~Book()
 	deallocate();
 }
 
-void Book::displaySorted()
-{
-	std::cout << title << ", " << author << ", " << ISBN << '\n';
-}
-
 void Book::setAuthor(const char* author)
 {
 	assert(author != nullptr);
@@ -212,4 +207,34 @@ void Book::setISBN(const char* ISBN)
 
 	//strcpy(this->ISBN, ISBN);
 	this->ISBN = makecopy(ISBN);
+}
+
+char* Book::getAuthor() const
+{
+	return author;
+}
+
+char* Book::getTitle() const
+{
+	return title;
+}
+
+char* Book::getFileName() const
+{
+	return fileName;
+}
+
+char* Book::getDescription() const
+{
+	return description;
+}
+
+short Book::getRating() const
+{
+	return rating;
+}
+
+char* Book::getISBN() const
+{
+	return ISBN;
 }

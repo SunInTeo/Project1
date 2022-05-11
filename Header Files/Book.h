@@ -49,4 +49,14 @@ public:
 	void setDescription(const char* description);
 	void setRating(short rating);
 	void setISBN(const char* ISBN);
+
+	// same applies for the getters
+	// we may need to get the fileName where the text of the book is stored
+	// in a higher class
+	char* getAuthor() const;
+	char* getTitle() const;
+	char* getFileName() const;
+	char* getDescription() const;
+	short getRating() const;
+	char* getISBN() const;
 };
