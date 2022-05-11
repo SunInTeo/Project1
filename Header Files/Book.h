@@ -27,19 +27,6 @@ public:
 	Book(const Book& other);
 	Book& operator = (const Book& other);
 	~Book();
-	
-	// <title>, <author>, <ISBN>
-	// we need that for the first command 
-	void displaySorted();
-
-	// all the info
-	// for the find command
-	void displayFind();
-
-	// for the last command
-	// working on implementation
-	// still need to think of the arguments that the function will need in order to work
-	void display();
 
 	// still not sure whether the setters will be used 
 	// will remove the if unnecessary
