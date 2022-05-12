@@ -43,7 +43,9 @@ public:
 	char* getAuthor() const;
 	char* getTitle() const;
 	char* getFileName() const;
-	char* getDescription() const;
+	// opens the file where the text of the book is stored
+	// and reads it and returns description 
+	char* getDescription() const; 
 	short getRating() const;
 	char* getISBN() const;
 };

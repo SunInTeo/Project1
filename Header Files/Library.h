@@ -5,9 +5,11 @@ class Library
 {
 private:
 	Book* books = nullptr;
+	char directory[50]{}; // text file for the library
 
 public:
-	Library() = default;
+	Library() = delete;
+	Library(const char* directory); // opens and writes to the file
 	~Library();
 
 	void addBook(); // asks for password
