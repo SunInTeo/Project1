@@ -62,7 +62,7 @@ char* Book::makecopy(const char* str)
 	if (!copy)
 	{
 		std::cout << "Memory problem!" << std::endl;
-		return;
+		return nullptr;
 	}
 	strcpy(copy, str);
 
@@ -221,7 +221,27 @@ char* Book::getTitle() const
 
 char* Book::getFileName() const
 {
-	return fileName;
+	return const_cast<char*>(&fileName[0]);
+}
+
+char* Book::getBookText() const
+{
+	std::ifstream file(fileName);
+
+	if (!file.is_open())
+	{
+		std::cout << "Problem while opening the file!" << std::endl;
+		return nullptr;
+	}
+	
+	std::string fileContent;
+	std::getline(file, fileContent, '\0');
+
+	file.close();
+
+	char* text = const_cast<char*>(fileContent.c_str());
+
+	return text;
 }
 
 char* Book::getDescription() const

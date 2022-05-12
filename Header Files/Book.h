@@ -1,8 +1,12 @@
 ﻿#pragma once
 
 #include <iostream>
+#include <fstream>
 #include <cstring>
 #include <cassert>
+#include <string>
+
+const int MAX_LINE_SIZE = 1024;
 
 class Book
 {
@@ -44,7 +48,8 @@ public:
 	char* getTitle() const;
 	char* getFileName() const;
 	// opens the file where the text of the book is stored
-	// and reads it and returns description 
+	// and reads it and returns the content 
+	char* getBookText() const;
 	char* getDescription() const; 
 	short getRating() const;
 	char* getISBN() const;
