@@ -4,6 +4,9 @@
 #include <cassert>
 #include "Utils.h"
 
+/**
+	 * class defining a Book
+	 */
 class Book
 {
 private:
