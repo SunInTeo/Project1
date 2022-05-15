@@ -45,3 +45,19 @@ std::string toUpperCase(const std::string& str)
     }
     return newStr;
 }
+
+char* findSubstr(const char* string, const char* substr) {
+    for (;;) {
+        if (*string == *substr) {
+            for (char* p1 = (char*)string, *p2 = (char*)substr;;) {
+                if (!*p2)
+                    return (char*)string;
+                if (*p1++ != *p2++)
+                    break;
+            }
+        }
+        if (!*string++)
+            break;
+    }
+    return NULL;
+}

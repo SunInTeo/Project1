@@ -56,19 +56,6 @@ void Book::copy(const Book& other)
 	ISBN = makecopy(other.ISBN);
 }
 
-char* Book::makecopy(const char* str)
-{
-	char *copy = new (std::nothrow) char[strlen(str) + 1];
-	if (!copy)
-	{
-		std::cout << "Memory problem!" << std::endl;
-		return nullptr;
-	}
-	strcpy(copy, str);
-
-	return copy;
-}
-
 Book::Book()
 	: author(def_str), title(def_str), description(def_str), ISBN(def_str)
 {

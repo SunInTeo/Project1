@@ -1,4 +1,7 @@
 #include "../Header Files/CommandHandler.h"
+#include <conio.h>
+
+const char* PASSWORD = "1234";
 
 CommandHandler& CommandHandler::getInstance()
 {
@@ -50,11 +53,45 @@ void CommandHandler::execute(Command command)
     }
     else if (mainCommand == "ADD")
     {
-        my_lib.addBook();
+        //https://stackoverflow.com/questions/41652182/how-to-display-asterisk-for-input-password-in-c-using-clion
+        std::cout << "Enter password: ";
+        char s[4] = { 0 };
+        int i;
+        for (i = 0; i < 4; i++) {
+            s[i] = _getch();
+            if (s[i] == 13) {
+                break;
+            }
+            else {
+                _putch('*');
+            }
+        };
+        getchar();
+
+        if (s == PASSWORD)
+            my_lib.addBook();
+        else
+            std::cout << "Incorrect password.\nExiting the program...";
     }
     else if (mainCommand == "REMOVE")
     {
-        my_lib.removeBook(command[1].c_str(), command[1].c_str());
+        std::cout << "Enter password: ";
+        char s[4] = { 0 };
+        int i;
+        for (i = 0; i < 4; i++) {
+            s[i] = _getch();
+            if (s[i] == 13) {
+                break;
+            }
+            else {
+                _putch('*');
+            }
+        };
+        getchar();
+        if (s == PASSWORD)
+            my_lib.removeBook(command[1].c_str(), command[1].c_str());
+        else
+            std::cout << "Incorrect password.\nExiting the program...";
     }
     else if (mainCommand == "DISPLAY")
     {
