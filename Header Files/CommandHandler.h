@@ -8,8 +8,11 @@ private:
     Library my_lib;
     bool hasOpened = false;
 
+    CommandHandler() {}
+
+    void printHelp(); 
+
 public:
-    CommandHandler() = delete;
     CommandHandler(const CommandHandler& other) = delete;
     CommandHandler& operator = (const CommandHandler& other) = delete;
 
@@ -17,5 +20,5 @@ public:
 
     void execute(Command command);
 
-    void startReading();
+    void startReading(std::string path);
 };

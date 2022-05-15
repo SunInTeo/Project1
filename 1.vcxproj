@@ -19,11 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Source Files\Book.cpp" />
+    <ClCompile Include="Source Files\Command.cpp" />
+    <ClCompile Include="Source Files\CommandHandler.cpp" />
+    <ClCompile Include="Source Files\Library.cpp" />
     <ClCompile Include="Source Files\Source.cpp" />
+    <ClCompile Include="Source Files\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Book.h" />
+    <ClInclude Include="Header Files\Book.h" />
+    <ClInclude Include="Header Files\Library.h" />
+    <ClInclude Include="Header Files\Command.h" />
+    <ClInclude Include="Header Files\CommandHandler.h" />
+    <ClInclude Include="Header Files\Utils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

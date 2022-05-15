@@ -1,12 +1,8 @@
 ﻿#pragma once
 
-#include <iostream>
-#include <fstream>
 #include <cstring>
 #include <cassert>
-#include <string>
-
-const int MAX_LINE_SIZE = 1024;
+#include "Utils.h"
 
 class Book
 {
@@ -20,8 +16,6 @@ private:
 
 	void deallocate();
 	void copy(const Book& other);
-
-	static char* makecopy(const char* str);
 
 public:
 	Book();
